@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sarthak 💖 Dishaa</title>
+
+<style>
+body{
+    margin:0;
+    padding:0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg,#1a0026,#4b006e,#ff0080);
+    background-size:400% 400%;
+    animation:bgMove 10s ease infinite;
+    text-align:center;
+    color:white;
+    overflow-x:hidden;
+}
+
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.container{
+    padding:40px 20px;
+}
+
+.glow{
+    color:#ff66b2;
+    text-shadow:0 0 10px #ff4da6,0 0 20px #ff1a75;
+}
+
+button{
+    padding:15px 30px;
+    border:none;
+    border-radius:30px;
+    background:#ff4da6;
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    margin-top:20px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:white;
+    color:#ff0080;
+}
+
+.letter{
+    display:none;
+    margin-top:30px;
+    max-width:600px;
+    margin-left:auto;
+    margin-right:auto;
+    background:rgba(255,255,255,0.1);
+    padding:25px;
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+    animation:fadeIn 2s ease forwards;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* Floating hearts */
+.heart{
+    position:fixed;
+    bottom:-10px;
+    animation:floatUp 6s linear infinite;
+}
+
+@keyframes floatUp{
+    0%{transform:translateY(0);opacity:1;}
+    100%{transform:translateY(-100vh);opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Sarthak ❤️ <span class="glow">Dishaa</span></h1>
+
+<h2>For The Love Of My Life 💖</h2>
+
+<button onclick="openLetter()">Open My Heart 💌</button>
+
+<div class="letter" id="letter">
+<p style="line-height:1.8; font-size:17px;">
+Dishaa, aaj main dil se tumse ek baat kehna chahta hoon. 
+Jab tum meri life mein aayi thi, mujhe tab nahi pata tha ki tum meri sb kuch ban jaogi. 
+Aaj har subah tumhari yaad se shuru hoti hai aur har raat tumhari soch ke saath khatam hoti hai. 
+Tum meri aadat nahi ho, tum meri zarurat ho.
+Ab mujhe tumhara addiction ho gaya hai.
+Tumhare bina sab kuch adhoora lagta hai. 
+Mai tumhare saath sirf aaj nahi, balki hamesha rehena chahta huu. 
+Har hasi, har struggle, har success aur har sapna — sab tumhare saath share karna chahta hoon. 
+Mai promise karta hoon ki main hamesha tumhari respect karunga, tumhe protect karunga aur tumhe kabhi akela mehsoos nahi hone dunga. 
+Dishaa, kya tum meri life partner banogi? 
+Kya tum mere saath hamesha ke liye chalogi?
+</p>
+
+<button onclick="yesFireworks()">YES 💍💖</button>
+</div>
+
+<audio id="bgMusic" loop>
+<source src="" type="audio/mpeg">
+</audio>
+
+</div>
+
+<script>
+function openLetter(){
+    document.getElementById("letter").style.display="block";
+    document.getElementById("bgMusic").play();
+}
+
+function yesFireworks(){
+    alert("She Said YESSSS 🥹💍");
+    for(let i=0;i<50;i++){
+        let spark=document.createElement("div");
+        spark.innerHTML="✨";
+        spark.style.position="absolute";
+        spark.style.left=Math.random()*100+"vw";
+        spark.style.top=Math.random()*100+"vh";
+        spark.style.fontSize="25px";
+        document.body.appendChild(spark);
+        setTimeout(()=>spark.remove(),1000);
+    }
+}
+
+/* Floating hearts */
+setInterval(()=>{
+    let heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="💖";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=(10+Math.random()*20)+"px";
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),6000);
+},500);
+</script>
+
+</body>
+</html>
